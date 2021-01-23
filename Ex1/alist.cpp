@@ -194,7 +194,7 @@ template<class T> bool AList<T>::sublist(AList<T> &list)
 template<class T> void AList<T>::delete_last(int k)
 {
     if (k > numitems){ 
-        cout << "Error!\n";
+        cout << "ERROR! There are fewer than " << k << " elements in the list!"<< std::endl;
         return;
     }
     while ((numitems-k > maxsize / 4) && (maxsize > minsize)){

@@ -21,6 +21,51 @@ int main()
     AList<double> mylist2;
     double doubleitem, result2;
     bool boolresult;
+
+    cout << "The initial list is as follows:"<< std::endl;
+    size = 20;
+    mylist1.append(5);
+    mylist1.append(9);
+    mylist1.append(13);
+    mylist1.append(24);
+    mylist1.append(4);
+    int numelements = mylist1.getlength();
+    for (int i = 1; i <= numelements; ++i)
+    {
+        intitem = mylist1[i];
+        cout << "List element " << i << " is " << intitem <<".\n";
+    }
+    cout << std::endl;
+    
+    cout << "Successful case1 -- delete the last 3 list elements" << std::endl;
+    cout << "The output is as follows:"<< std::endl;
+    mylist1.delete_last(3);
+    numelements = mylist1.getlength();
+    for (int i = 1; i <= numelements; ++i)
+    {
+        intitem = mylist1[i];
+        cout << "List element " << i << " is " << intitem <<".\n";
+    }
+    cout << "The length of list is " << numelements <<".\n";
+    cout << std::endl;
+
+    cout << "Unsuccessful case -- delete the last 3 list elements again (there exist only two elements in the list now.)" << std::endl;
+    cout << "The output is as follows:"<< std::endl;
+    mylist1.delete_last(3);
+    cout << "The length of list is " << numelements <<".\n";
+    cout << std::endl;
+
+    cout << "Successful case2 -- delete the last 2 list elements" << std::endl;
+    mylist1.delete_last(2);
+    cout << "The output is as follows:"<< std::endl;
+    numelements = mylist1.getlength();
+    for (int i = 1; i <= numelements; ++i)
+    {
+        intitem = mylist1[i];
+        cout << "List element " << i << " is " << intitem <<".\n";
+    }
+    cout << "The length of list is " << numelements <<".\n";
+    /*
     do
     {
         cout << "Choose your element type:\n";
@@ -337,5 +382,6 @@ int main()
         }
     }
     while (op != 0);
+    */
     return(0);
 }
