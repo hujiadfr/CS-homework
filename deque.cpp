@@ -15,7 +15,10 @@ template<class T> void Deque<T>::pushback(int value)
     reprarray[rear] = value;
     rear = (rear+1) % maxsize;
     numitems++;
-    if (full()) allocate();clear();
+    if (full()) {
+        allocate();
+        clear();
+    }
 }
 
 template<class T> void Deque<T>::pushfront(int value)
@@ -23,7 +26,10 @@ template<class T> void Deque<T>::pushfront(int value)
     reprarray[head] = value;
     head = (head-1) % maxsize;
     numitems++;
-    if (full()) allocate();clear();
+    if (full()) {
+        allocate();
+        clear();
+    }
 }
 
 template<class T> void Deque<T>::popback(void)
@@ -33,8 +39,12 @@ template<class T> void Deque<T>::popback(void)
         return;
     }
     rear = (rear-1) % maxsize;
+    reprarray[rear] = 0;
     numitems--;
-    if (less()) deallocate();clear();
+    if (less()) {
+        deallocate();
+        clear();
+    }
 }
 
 template<class T> void Deque<T>::popfront(void)
@@ -44,8 +54,12 @@ template<class T> void Deque<T>::popfront(void)
         return;
     }
     head = (head+1) % maxsize;
+    reprarray[head] = 0;
     numitems--;
-    if (less()) deallocate();clear();
+    if (less()){
+        deallocate();
+        clear();
+    }
 }
 
 template<class T> void Deque<T>::allocate()

@@ -57,9 +57,10 @@ int main()
             case 5:
             {
                 int numelements = mylist.getlength();
-                for (int i = 0; i <= size; ++i)
+                int head = mylist.head;
+                for (int i = 0; i < numelements; ++i)
                 {
-                    intitem = mylist[i];
+                    intitem = mylist[++head % size];
                     cout << "List element " << i << " is " << intitem <<".\n";
                 }
             }
