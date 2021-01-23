@@ -44,8 +44,8 @@ public:
     bool member(T value);
     bool equal(DList<T> *dlist);
     bool sublist(DList<T> *dlist);
+    void bubbleSort(void);
     //this is my new code
-    void delete_last(DList<T> *dlist, int k);
 private:
     node<T> *dummy;
     int numitems;

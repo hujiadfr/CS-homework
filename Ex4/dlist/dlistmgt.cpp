@@ -167,7 +167,7 @@ int main()
                             cout << "Enter a value for your new list:\n";
                             cin >> intitem;
                             mylistnew1.append(intitem);
-                        }3
+                        }
                     }
                     while (yes == 1);
                     mylist1.concat(&mylistnew1);
@@ -309,33 +309,11 @@ int main()
             case 12:
             {
                 if(type == 0)
-                {
-                    int k;
-                    int numelements = mylist1.getlength();
-                    cout << "Enter how many elements do you want to delete:\n";
-                    cin >> k;
-                    while (k > numelements)
-                    {
-                        cout << " a wrong number please enter again!\n";
-                        cin >> k;
-                    }
-                    mylist1.delete_last(&mylist1, k);
-                }
+                    mylist1.bubbleSort();
                 else
-                {
-                    int k;
-                    int numelements = mylist2.getlength();
-                    cout << "Enter how many elements do you want to delete:\n";
-                    cin >> k;
-                    while (k > numelements)
-                    {
-                        cout << " a wrong number please enter again!\n";
-                        cin >> k;
-                    }
-                    mylist2.delete_last(&mylist2, k);
-                }
-                break;
+                    mylist2.bubbleSort();
             }
+            break;
             default: return(0);
         }
         

@@ -278,24 +278,24 @@ template<class T> bool DList<T>::sublist(DList<T> *dlist)
     return result;
 }
 
-template<class T> void DList<T>::delete_last(DList<T> *dlist, int k)
+template<class T> void DList<T>::bubbleSort(void)
 {
-    for(;k > 0; k--)
+    node<T> *pi, *pj;
+    pi = dummy -> getnext();
+    for (int i = 1; i <= numitems; ++i)
     {
-        node<T> *pt_i;
-        pt_i = locate(numitems);
-        node<T> *pt_i1;
-        pt_i1 = (*pt_i).getprevious();
-        node<T> *pt_i2;
-        pt_i2 = (*pt_i).getnext();
-        (*pt_i1).setnext(pt_i2);
-        (*pt_i2).setprevious(pt_i1);
-        numitems -= 1;
+        pj = pi->getnext();
+        for(int j = i + 1; j <= numitems; ++j)
+        {
+            if(pi->getdata() > pj->getdata())
+            {
+                int temp;
+                temp = pj->getdata();
+                pj->dataitem = pi->getdata();
+                pi->dataitem = temp;
+            }
+            pj = pj -> getnext();
+        } 
+        pi = pi -> getnext();
     }
-    return;
-}
-
-template<class T> void Dlist<T>::bubbleSort<void>
-{
-
 }
