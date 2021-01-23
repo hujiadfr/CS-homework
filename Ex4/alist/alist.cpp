@@ -191,109 +191,62 @@ template<class T> bool AList<T>::sublist(AList<T> &list)
     }
     return result;
 }
-template<class T> int AList<T>::getSmallestItem(void)
-{
-    T minimum;
-    int index;
-    for(int i = 0; i < numitems; ++i)
-    {
-        if(minimum > reprarray[i])
-            minimum = reprarray[i];
-            index = i + 1;
-    }
-    return index;
-}
-template<class T> int AList<T>::getLargestItem(void)
-{
-    T maximum;
-    int index;
-    maximum = reprarray[0];
-    index = 1;
-    for(int i = 0; i < numitems; ++i)
-    {
-        if(maximum < reprarray[i])
-            maximum = reprarray[i];
-            index = i + 1;
-    }
-    return index;
-}
-
 template<class T>void AList<T>::selectionSort(void)
 {
-    int newsize = maxsize;
-    int index;
-    T *newarray = new T[newsize];
-    for (int i = 0; i < numitems; ++i)
+    int i,j;
+    int mid;
+    for (i = 0 ; i < numitems - 2 ; i++) 
     {
-    	index = getSmallest();
-        newarray[i] = reprarray[index-1];
-        remove(index);
-    }
-    delete[] reprarray;
-    reprarray = newarray;
-    maxsize = newsize;
-    return;
+                int min = i;
+                for (j = i + 1; j < numitems - 1; j++)
+                        if (reprarray[j] < reprarray[min])
+                                min = j;
+                mid = reprarray[min];
+                reprarray[min] = reprarray[i];
+                reprarray[i] = mid;
+        }
 }
 
-template<class T>int AList<T>::binarySearch(int target, &T newarray)
+template<class T>int AList<T>::binarySearch(int target, int left, int right)
 {
-	int left = 0;
-	int right = numitems - 1;
-	int mid;
-		while(left < right)
-		{
-			mid = (left + right) / 2
-			if(newarray[mid] == target)
-				right = mid;
-			else if (newaray[mid] < target)
-				left = mid + 1;
-			else if(newarray[mid] > target)
-				right = mid;
-		}
-		return left;
-	
+	int mid = 0;
+    while (left <= right)
+    {
+        mid = (left + right) / 2;
+        if (target < reprarray[mid])
+            right = mid - 1;
+        else if (target > reprarray[mid])
+            left = mid + 1;
+        else
+            return mid;
+    }
+    return left;
 }
 
 template<class T>void AList<T>::insertionSort(void) //flag show how to sort
 {
-	int newsize = maxsize;
-	int newitems = 0;
-    int index;
-    T *newarray = new T[newsize];
-    newarray[0] = reprarray[0];
-    for (int i = 1; i < numitems; ++i)
+    int temp, index;
+    int j, i;
+    for (i = 1; i < numitems; i++)
     {
-    	index = binarySearch(reprarray[i], flag, newarray);
-    	if (index < newitems)
-    	{
-        	for (int j = newitems - 1; j >= index; --j)
-        	{
-            	newarray[j+1] = newarray[j];
-        	}
-        		newarray[index] = reprarray[i];
-        		++newitems;
-   		}
-    	else
-    	{
-        	newarray[newitems] = reprarray[i];
-        	++newitems;
-    	}
+        temp = reprarray[i];
+        index = binarySearch(temp, 0, i - 1);
+        for(j = i - 1; j >= index; j--)
+            reprarray[j + 1] = reprarray[j];
+        reprarray[j + 1] = temp;
     }
-    delete[] reprarray;
-    reprarray = newarray;
-    maxsize = newsize;
-    return;
 }
+
 
 template<class T>void AList<T>::bubbleSort(void)
 {
 	int m,i,j;
 	for(i=0;i<numitems-1;i++)
 		for(j=0;j<numitems-1-i;j++)
-			if(reprarray[j]>=arr[j+1])
+			if(reprarray[j]>=reprarray[j+1])
 			{
-				m=reprarry[j];
-				reprarry[j]=reprarry[j+1];
-				reprarry[j+1]=m;
+				m=reprarray[j];
+				reprarray[j]=reprarray[j+1];
+				reprarray[j+1]=m;
 			}
 }

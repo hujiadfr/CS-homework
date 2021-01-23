@@ -33,9 +33,7 @@ private:
     T *reprarray;
     void allocate(void);
     void deallocate(void);
-    int getLargest(void);
-    int getSmallest(void);
-    int binarySearch(void);
+    int binarySearch(int searchNum, int low, int high);
 };
 
 template<class T> AList<T>::AList(int size)

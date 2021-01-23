@@ -322,6 +322,42 @@ int main()
                 }
                 break;
             }
+            case 12:
+            {
+                if(type == 0)
+                {
+                    mylist1.bubbleSort();
+                }
+                else
+                {
+                    mylist2.bubbleSort();
+                }
+                break;
+            }
+            case 13:
+            {
+                if(type == 0)
+                {
+                    mylist1.selectionSort();
+                }
+                else
+                {
+                    mylist2.selectionSort();
+                }
+                break;
+            }
+            case 14:
+            {
+                if(type == 0)
+                {
+                    mylist1.insertionSort();
+                }
+                else
+                {
+                    mylist2.insertionSort();
+                }
+                break;
+            }
             default: return(0);
         }
     }
