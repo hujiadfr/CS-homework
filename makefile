@@ -1,7 +1,4 @@
-dequemgt: dequemgt.cpp deque.o deque.h
-	g++ dequemgt.cpp deque.o -o dequemgt
-deque.o: deque.cpp deque.h
-	g++ -c deque.cpp -o deque.o 
-clean:
-	-rm -rf $(OBJ) dequemgt deque.o 
-
+listmgt: listmgt.cpp alist.o alist.h
+	g++ listmgt.cpp alist.o -o listmgt
+alist.o: alist.cpp alist.h
+	g++ -c alist.cpp -o alist.o
