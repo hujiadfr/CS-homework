@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/MAX_HEAP.dir/main.cpp.o CMakeFiles/MAX_HEAP.dir/heap.cpp.o  -o MAX_HEAP 

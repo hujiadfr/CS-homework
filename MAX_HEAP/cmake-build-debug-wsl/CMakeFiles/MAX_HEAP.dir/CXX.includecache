@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/jiaru/Documents/GitHub/CS-homework/MAX_HEAP/heap.cpp
+heap.h
+/mnt/c/Users/jiaru/Documents/GitHub/CS-homework/MAX_HEAP/heap.h
+vector
+-
+iostream
+-
+
+/mnt/c/Users/jiaru/Documents/GitHub/CS-homework/MAX_HEAP/heap.h
+vector
+-
+
+/mnt/c/Users/jiaru/Documents/GitHub/CS-homework/MAX_HEAP/main.cpp
+iostream
+-
+heap.cpp
+/mnt/c/Users/jiaru/Documents/GitHub/CS-homework/MAX_HEAP/heap.cpp
+
