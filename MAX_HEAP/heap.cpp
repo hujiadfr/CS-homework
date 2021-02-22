@@ -10,26 +10,25 @@ template<class T> void heap<T>::HeapAdjust(int parent, int length)
 {
     //child parent records the index
     T temp = tree[parent];
-    int child = 2*parent + 1;
-    if(child < length)
+    int child;
+    for(child = 2*parent+1; child < length; child = child*2+1)
     {
         if(child + 1 < length && tree[child] < tree[child+1])
-            child ++;
-        if(temp >=tree[child]) //if parent is larger than child, then function end.
-            return;
+            child++;
+        if(temp > tree[child]) break; //child smaller then parent, break to next child
         tree[parent] = tree[child];
-        tree[child] = temp;
-        HeapAdjust(child, length);
+        parent = child;
     }
+    tree[parent] = temp;
 }
 
 template<class T> void heap<T>::HeapSort()
 {
     int length  = tree.size();
     if(length == 0) return;
-    for(int i = length/2; i>=0; i--)
+    for(int i = length/2-1; i>=0; i--) //build a heap firstly
         HeapAdjust(i, length);
-    for(int i = length - 1; i>0; i--) //exchange the top and the bottom
+    for(int i = length - 1; i > 0; i--) //exchange the top and the bottom
     {
         int temp = tree[i];
         tree[i] = tree[0];
