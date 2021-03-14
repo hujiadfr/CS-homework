@@ -16,23 +16,18 @@ template<class T> int NumSet<T>::Check_Relation(vector<pair<int,int> > R){
         1: The binary relation R is symmetric
     */
 
-     map<int, vector<int>> a;
-	map<int, vector<int>>::iterator it_map;
+    map<int, vector<int>> a;
 	vector<int>::iterator it_vector;
     for(int i=0;i<=R.size()-1;++i)
         a[R[i].first].push_back(R[i].second);
 
     for(int i=0;i<=R.size()-1;++i)
     {     
-        it_map=a.find(R[i].second);
-        if (it_map == a.end()) return 0;
+        if (a.find(R[i].second) == a.end()) return 0;
         it_vector = find(a[R[i].second].begin(), a[R[i].second].end() , R[i].first);
          if( it_vector == a[R[i].second].end() )
-        {
             return 0;
-        }
     }
-
    return 1;
 };
 int main(){
@@ -63,5 +58,25 @@ int main(){
     cout << "The correct answer should be No"<<endl;
     cout << "Your answer is:" << ((S.Check_Relation(Relation_R2)== 1)?"Yes":"No")<< endl;
     
+
+    //Here is for Test 3
+    vector<pair<int,int> > Relation_R3;
+    Relation_R3.push_back(make_pair(1,3));
+    Relation_R3.push_back(make_pair(1,2));
+    Relation_R3.push_back(make_pair(2,1));
+    Relation_R3.push_back(make_pair(3,1));
+    cout << "For Test 3:"<<endl;
+    cout << "The correct answer should be Yes"<<endl;
+    cout << "Your answer is:" << ((S.Check_Relation(Relation_R3)== 1)?"Yes":"No")<< endl;
+
+    //test 4
+    vector<pair<int,int> > Relation_R4;
+    Relation_R4.push_back(make_pair(1,3));
+    Relation_R4.push_back(make_pair(1,2));
+    Relation_R4.push_back(make_pair(1,5));
+    Relation_R4.push_back(make_pair(1,6));
+    cout << "For Test 4:"<<endl;
+    cout << "The correct answer should be No"<<endl;
+    cout << "Your answer is:" << ((S.Check_Relation(Relation_R4)== 1)?"Yes":"No")<< endl;
     return 0;
 }
