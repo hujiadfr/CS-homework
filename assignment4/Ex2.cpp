@@ -20,10 +20,7 @@ template<class T> int NumSet<T>::Check_Relation(vector<pair<int,int> > R){
 	map<int, vector<int>>::iterator it_map;
 	vector<int>::iterator it_vector;
     for(int i=0;i<=R.size()-1;++i)
-    {   
-       // a[R[i].first].insert(make_pair(R[i].second,100));
         a[R[i].first].push_back(R[i].second);
-    }
 
     for(int i=0;i<=R.size()-1;++i)
     {     
