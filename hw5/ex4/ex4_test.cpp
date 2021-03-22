@@ -109,7 +109,7 @@ int main()
     /**************************************************************/
     /* Check Point 2: Compare the performance with initial hashset as baseline */
     /* ctime is included for you to help */
-    cout<< "add 100000 items (odd number from 1 - 200000) to a new hashtable\nfind 1-200000 in the hashset\n";
+    cout<< "add 100000 items (odd number from 1 - 200000) to a new hashtable\nfind them in the hashset\n";
     hashset<int> test5;
     clock_t start,end;
     start=clock();
@@ -155,6 +155,6 @@ int main()
     }
     end=clock();
     cout<<"the finding time for hashset_rh is "<<end-start<<"\n";
-    cout<<"in conclusion, for finding function, hashset_rh and hashset_lcfs is better, for adding function, hashset performs a little better but mostly same\n";
+    cout<<"the time varies a lot and may base on computer state. Sometimes it can't reflect performance compare with the base\n";
     return 0;
 }
