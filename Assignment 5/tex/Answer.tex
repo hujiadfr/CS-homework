@@ -107,44 +107,5 @@ m-\frac{1}{m^n}
 $$ 
 %%%%%%%%%%%%%%%%%%%
 \section{Exercise 4}
-\subsection{exercise (i)}
-(1) If $[e_1,\dots,e_{n}]$ is a permutation of $[e_1',\dots,e_{n}']$, trivially, we have:
-$$
-P(x) = \prod_{i=1}^{n} {(x-e_i)} - \prod_{i=1}^{n} {(x-e_i')} \equiv 0
-$$
-\noindent
-(2) On the other hand, if: 
-$$
-P(x) = \prod_{i=1}^{n} {(x-e_i)} - \prod_{i=1}^{n} {(x-e_i')} \equiv 0
-$$
-We want to prove that $[e_1,\dots,e_{n}]$ is a permutation of $[e_1',\dots,e_{n}']$. We prove by contradiction. Let $E = [e_1,\dots,e_{n}]$, $E' = [e_1',\dots,e_{n}']$. Suppose $E$ is not a permutation of $E'$. 
-\begin{enumerate}
-    \item if $E$ and $E'$ consist of different elements, w.l.o.g., suppose there is an element $e_m$ that $\{  e_m| e_m \in E  \land  e_m \notin E' \} $. Then, 
-    $$
-    P(e_m) = 0 - \prod_{i = 1}^n {(e_m - e_i')} \neq 0
-    $$
-    Contradiction. 
-    \item if $E$ and $E'$ consist of the same elements but the number of occurrence various, e.g., $E = [2, 2, 2, 3]$ and $E' = [2, 3, 3, 3]$. 
-    Pop all matched elements from $E$ and $E'$ to $D$, i.e. $D = [2,3]$, $E = [2,2]$ and $E'=[3,3]$. 
-    By factorization we know: 
-    $$
-    P(x) = \prod_{e \in D}(x - e) \left[ \prod_{i = 1}^{n'} {(x - e_i)} - \prod_{i = 1}^{n'} {(x - e_i')} \right]
-    $$
-    Then find a $x$ that $P(x) \neq 0$. It's obvious that $x \notin D$. 
-    Since $D$ may contain all possible $e_m$ that $\{  e_m| e_m \in E  \land  e_m \notin E' \} $ and vice versa , i.e. $e_m = 2$, the approach of 1 fail.
-    Instead, take $x \to E[0]$, then:
-    $$
-    \lim_{x \to E[0]}  \prod_{e \in D}(x - e) \neq 0 \land  \lim_{x \to E[0]} \left[  \prod_{i = 1}^{n'} {(x - e_i)} - \prod_{i = 1}^{n'} {(x - e_i')} \right]\neq 0 
-    $$ 
-    $\therefore  P(E[0]) \neq 0$. Contradiction.
-\end{enumerate}
-By 1 and 2, we claim that $[e_1,\dots,e_{n}]$ is a permutation of $[e_1',\dots,e_{n}']$ iff $P(x) \equiv 0$.
-\subsection{exercise (ii)}
-If $[e_1,\dots,e_{n}]$ is not a permutation of $[e_1',\dots,e_{n}']$, from exercise 4.1 we know that $P(x)$ is non-zero,
-and therefore, $P(x)$ has at most $n$ zeros. Further, $P(x)$ has at most $n$ zeros modulo $p$. By choosing a random $x \in [0,p-1]$, the probability of $P(x) \equiv 0 \mod p$: 
-\begin{align*}
-    probability = \frac{\text{number of zeros mod p}}{\text{number of free choices}}\le \frac{n}{p} \le \frac{n}{n/\varepsilon} = \varepsilon
-\end{align*}
-Therefore, we conclude that if $[e_1,\dots,e_{n}]$ is not a permutation of $[e_1',\dots,e_{n}']$, then the result of the evaluation is zero with probability at most $\varepsilon$.
-
+See the code for implementation
 \end{document}
