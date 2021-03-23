@@ -1,10 +1,10 @@
 # Fdb version 3
-["pdflatex"] 1616466876 "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.tex" "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.pdf" "Answer" 1616466878
-  "Answer.aux" 1616466878 806 7aa4f48123e7a3791e0e1833fd1ecd79 "pdflatex"
-  "Answer.tex" 1616466875 4311 42a261f3b1753ea09c078883d3f2ec1f ""
-  "Answer.toc" 1616466878 470 460300ea10da0f1e9df56e3cf1a85abf "pdflatex"
-  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.aux" 1616466878 806 7aa4f48123e7a3791e0e1833fd1ecd79 ""
-  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.tex" 1616466875 4311 42a261f3b1753ea09c078883d3f2ec1f ""
+["pdflatex"] 1616467337 "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.tex" "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.pdf" "Answer" 1616467338
+  "Answer.aux" 1616467338 806 f5eac042faeefd4751ce0d1fdc9c3104 "pdflatex"
+  "Answer.tex" 1616467334 4329 8b645cea2e4230bf92b8e02b9ba53340 ""
+  "Answer.toc" 1616467338 470 5ea1048513ca1cd7bbba3412401ca539 "pdflatex"
+  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.aux" 1616467338 806 f5eac042faeefd4751ce0d1fdc9c3104 ""
+  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.tex" 1616467334 4329 8b645cea2e4230bf92b8e02b9ba53340 ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1614004560 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1614003779 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1614003779 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -61,9 +61,9 @@
   "c:/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1614007313 1198191 e4398c8913458f4d4c03d46ca7e9f664 ""
   "c:/texlive/2020/texmf.cnf" 1614007164 673 4ae7b2f49cee444c5343a45b5d0f169c ""
   (generated)
-  "Answer.pdf"
-  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.log"
   "Answer.log"
-  "Answer.toc"
-  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.pdf"
   "Answer.aux"
+  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.pdf"
+  "c:/Users/jiaru/Documents/GitHub/CS-homework/Assignment 5/tex/Answer.log"
+  "Answer.pdf"
+  "Answer.toc"
