@@ -1,0 +1,114 @@
+\documentclass[12pt,oneside,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\setlength{\parskip}{6pt}   %设置段间距
+\graphicspath{ {./images/} }
+\pagestyle{headings}
+\hyphenation{a}
+\title{Homework 5}          %设置标题
+\author{Hu Jiarun \and He Zhanhao \and Lu Keyu \and Zhou Yang } %设置作者
+\date{March 20, 2021}        %设置日期
+\DeclareMathOperator*{\TKY}{TKY}
+\begin{document}        %开始PDF显示的文档
+\maketitle              %显示标题
+\tableofcontents        %显示目录
+\thispagestyle{empty}   %目录页不显示页码
+
+%章节标题
+%\section{Exercise #}
+%\subsection{exercise #}
+%\subsubsection{title}
+%\paragraph{title}
+%\subparagraph{title}
+
+%行间公式
+%   $ a= 1 $ 
+
+%块间公式  
+%   $$
+%   a = 1
+%   $$
+
+%上标 a^2 和下表 a_1
+
+\newpage    %新起一页
+\setcounter{page}{1}    %从下面开始编页码
+
+\section{Exercise 1}    
+\subsection{exercise (i)}
+For $Change\_Key(H,x,k)$, we consider two operations:
+$$\left\{
+\begin{aligned}
+Decrease(H,x,k)&\quad&\text{if}~k > x.key\\
+Increase(H,x,k)&\quad&\text{if}~k < x.key\\
+Undefined&\quad&\text{if}~k = x.key
+\end{aligned}
+\right.
+$$
+For $Decrease(H,x,k)$, we need a cut operation: $Cut(x,parent)$, which cut the node whose key we decrease from its parent and add it to the root lists. And if the node is not an single node, but a root of a subtree. Then we cut the entire subtree and add it to the root lists.\\
+We use operation $CascadedCut(parent)$ for its parent node $parent$.\\
+\begin{itemize}
+    \item[i.]   if $parent.marked = False$ then $parent.marked=True$.
+    \item[ii.]  else $Cut(parent,grandparent)$ and $CascadedCut(grandparent)$
+\end{itemize}
+And for $Increase(H,x,k)$
+\begin{itemize}
+    \item[i.]   assume $x$ is the child that we want to change its key. And add left child and its siblings to the root lists 
+    \item[ii.]  $CascadedCut(x)$ and add $x$ node to the root lists
+\end{itemize}
+Then we start our amortised complexity analysis. We have known that the potential of an Fibonacci Heap is:
+$$
+\Phi(H)=t(H)+2m(H) 
+$$
+Then we can get the amortised time complexity for $Decrease(H,x,r)$ is:
+$$
+\phi(H')=\phi(H)+actual\_coast=t(H')-t(H)+2(m(H')-m(H))+actual\_coast
+$$
+Then we analyse $CascadedCut(H,x,r)$. Assuming there is c cascading cuts, the actual cost is decrease the number, increase c times, so it is $O(c)$\\
+Thus,we can determine the number of new trees is $c$
+$$
+t(H')-t(H)=c
+$$ 
+and c-1 marked nodes become unmark.
+$$
+(m(H')-m(H))+actual\_cost = c-1
+$$
+Then the amortised time complexity is $O(c+c-2(c-1))=O(1)$\\
+For the $Increase(H,x,k)$, the first case is the same as the $delete$ operation, as lecture metions the amortised time complexity is $O(log(n))$\\
+And after $delete$, we add the $x$ node to root lists. Then the amortised complexity time $O(log(n)+1)=O(log(n))$  
+\subsection{exercise (ii)}
+Suppose that the additional cost to the potential function that was proportional to the size of the heap. Because the size only increase
+when we do an insertion, and then only by a constant amount. Thus we don't need to consider this increased potential function raising
+the amortised cost of any operations. Then we modify the heap itself  by having a doubly linked list along all of the leaf nodes in the heap.\\
+Then for $Prune(H,r)$ we can pick any leaf node, remove it from it parents child list. This causes the potential decrease by the amount which 
+is proportional to r. The actual cost of ehat just happened since the deletions from the linked list take only constant time.
+So it is $O(c)$
+%%%%%%%%%%%%%
+\section{Exercise 2}
+\subsection{exercise (i)}
+See the code for implementation.
+\subsection{exercise (ii)}
+See the code for implementation.\\
+~\\
+~\\
+~\\ 
+\section{Exercise 3}
+
+For a single item in represented set, we can throw them to the box randomly. Thus the possiblity is $\frac{1}{m}$. Then the possiblity that 
+the item doesn't in the box is 
+$$
+1-\frac{1}{m}
+$$
+So for all $n$ items, the possibility that box is empty is 
+$$
+1-\frac{1}{m^n}
+$$
+Thus, if $X_i=1$ if $A_i$ is empty, the expect number is 
+$$
+m-\frac{1}{m^n}
+$$ 
+%%%%%%%%%%%%%%%%%%%
+\section{Exercise 4}
+See the code for implementation
+\end{document}
